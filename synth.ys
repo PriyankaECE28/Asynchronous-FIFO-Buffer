@@ -1,0 +1,10 @@
+read_verilog async_fifo.v
+hierarchy -top async_fifo
+proc; opt; memory; opt
+
+# Clean high-level block schematic
+show -format dot -prefix fifo_schematic_clean
+
+techmap; opt
+stat
+write_verilog netlist_synthesized.v
